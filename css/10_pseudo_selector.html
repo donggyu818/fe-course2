@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo Selector</title>
+    <meta name="description" content="Pseudo Selector">
+    <style>
+        /* h1 태그 앞에 content에 해당하는 내용을 추가하고 글자색을 초록색으로 정의 */
+        h1::before {
+            content: "h1태그 앞에 추가되는 내용!!";
+            color: green;
+        }
+        /* h1 태그 뒤에 content에 해당하는 내용을 추가하고 글자색을 빨간색으로 정의 */
+        h1::after {
+            content: "h1태그 뒤!!";
+            color: red;
+        }
+        /* a 태그에 마우스를 올린 상태 */
+        a:hover {text-decoration: none;}
+        a.naver:hover {color: red;}
+        a.google:hover {color: green;}
+        a.daum:hover {color: skyblue;}
+        a.naver:active {color: green;}
+        a.naver:visited {color: gray;}
+
+        input {outline: none;}
+        input:focus {
+            background-color: bisque;
+            border: 1px solid lightgray;
+            border-radius: 4px;
+        }
+        /* 수열 */
+        ul.menus li:first-child, ul.menus li:nth-child(4) {
+            background-color: red;
+        }
+        ul.menus li:last-child a {color: brown;}
+        ul.menus li:nth-child(3) {background-color: red;}
+        div p:nth-child(2n) /* 짝수 (2n, even) */ {background-color: silver;}
+        div p:nth-child(2n+1) /* 홀수 (2n+1, odd)*/ {background-color: aquamarine;}
+
+        table tr:nth-child(2n+1) {background-color: aqua;}
+        table tr:first-child {background-color: gray;}
+
+        input:checked + span {
+            background-color: green;
+        }
+        input:disabled {
+            background-color: antiquewhite;
+        }
+
+        /* *:not() : 부정 선택자. 얘 빼고 나머지 선택함 */
+        div *:not(p:nth-child(3)) {color: red;}
+    </style>
+</head>
+<body>
+    <h1>Pseudo Selector</h1>
+    <p>
+        <a href="http://www.naver.com" class="naver">네이버</a>
+        <a href="http://www.google.com" class="google">구글</a>
+        <a href="http://www.daum.com" class="daum">다음</a>
+    </p>
+    <form action="#">
+        <ul>
+            <li>
+                <label for="name">이름</label>
+                <input type="text" name="name" id="name" value="홍길동" disabled>
+            </li>
+            <li>
+                <label for="address">주소</label>
+                <input type="text" name="address" id="address">
+            </li>
+            <li>
+                <label for="hobby">취미를 선택해주세요</label>
+                <input type="checkbox" name="hobby" value="game" checked><span>게임하기</span>
+                <input type="checkbox" name="hobby" value="music"><span>음악듣기</span>
+            </li>
+            <li>
+                <label for="menu">메뉴를 선택해주세요</label>
+                <input type="radio" name="menu" value="coffee" checked><span>커피</span>
+                <input type="radio" name="menu" value="milk"><span>우유</span>
+            </li>
+            <li>
+                <button disabled>전송하기</button>
+            </li>
+        </ul>
+    </form>
+    <hr>
+    <h1>Pseudo Selector - 수열</h1>
+    <ul class="menus">
+        <li><a href="#">menu1</a></li>
+        <li><a href="#">menu1</a></li>
+        <li><a href="#">menu1</a></li>
+        <li><a href="#">menu1</a></li>
+        <li><a href="#">menu1</a></li>
+    </ul>
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolor placeat, veritatis nostrum obcaecati non iusto illo ratione natus assumenda, molestias, voluptates possimus? Quae ullam dolorem natus quidem et accusantium!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolor placeat, veritatis nostrum obcaecati non iusto illo ratione natus assumenda, molestias, voluptates possimus? Quae ullam dolorem natus quidem et accusantium!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolor placeat, veritatis nostrum obcaecati non iusto illo ratione natus assumenda, molestias, voluptates possimus? Quae ullam dolorem natus quidem et accusantium!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolor placeat, veritatis nostrum obcaecati non iusto illo ratione natus assumenda, molestias, voluptates possimus? Quae ullam dolorem natus quidem et accusantium!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolor placeat, veritatis nostrum obcaecati non iusto illo ratione natus assumenda, molestias, voluptates possimus? Quae ullam dolorem natus quidem et accusantium!</p>
+    </div>
+    <table>
+        <tr>
+            <th>번호</th>
+            <th>상품명</th>
+            <th>가격</th>
+            <th>비고</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>키보드</td>
+            <td>10,000</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>모니터</td>
+            <td>100,000</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>마우스</td>
+            <td>5,000</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>랜선</td>
+            <td>500</td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>
