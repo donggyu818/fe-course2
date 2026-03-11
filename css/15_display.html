@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Style</title>
+    <meta name="description" content="Display Style">
+    <style>
+        /* display 프로퍼티 : block, inline, inline-block level 전환할 때 사용 */
+        div {
+            /* block-level은 width, height 적용 가능. */
+            background-color: aquamarine;
+            width: 50%; height: 100px;
+            display: block;
+        }
+        span, button, input {
+            /* inline-level은 width, height 적용 안 됨. 예외로 버튼, input 등 폼 형식 중 일부는 됨. */
+            background-color: tomato;
+            width: 100px; height: 50px;
+            display: inline;
+        }
+        img {
+            /* inline-level은 width, height 적용 가능. */
+            width: 200px; height: 200px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Display Style</h1>
+    <hr>
+    <div>block-level</div>
+    <span>inline-level</span>
+    <button>로그인</button>
+    <input type="text" value="홍길동">
+    <img src="../images/img01_seo.png" alt="inline-block image">
+</body>
+</html>
