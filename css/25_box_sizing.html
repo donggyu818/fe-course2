@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box-sizing</title>
+    <style>
+        .content-box, .border-box, .d1 {
+            width: 300px; height: 200px;
+            background-color: aquamarine;
+            margin: 20px;
+        }
+        .content-box {
+            border: 10px solid red;
+            box-sizing: content-box; /* box-sizing default */
+            padding: 0 20px; /* 오른쪽 왼쪽에만 10px 들어간 형태 */
+        }
+        .border-box {
+            box-sizing: border-box;
+            border: 10px solid red;
+            padding: 0 20px;
+        }
+        .d1 {
+            box-sizing: border-box;
+            width: 800px; height: 200px;
+            margin-top: 30px;
+            background-color: antiquewhite;
+            display: flex;
+            border: 1px solid yellow;
+        }
+        p {
+            box-sizing: border-box;
+            width: 400px; height: 200px;
+            background-color: tomato;
+            border: 10px solid blue;
+        }
+        .d0 {
+            width: 400px; height: 300px;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+        .d0 p {
+            border: 0;
+            border-right: 10px solid red;
+            background-color: #fff;
+            padding: 30px;
+            /* margin: 30px;  */
+            /* .d0 에 padding을 주거나 여기에 margin 줘도 되지만, 
+            여기에 margin을 주면 자식이 부모의 크기를 초과해서 선이 밖에 그어짐.
+            그래서 추가로 box-sizing 을 해서 딱 들어가게 해야 함. */
+        }
+    </style>
+</head>
+<body>
+    <h1>Box-sizing</h1>
+    <div class="content-box">
+        <ul>
+            <li>Box-sizing : content-box</li>
+            <li>width:300px</li>
+            <li>border:10px</li>
+            <li>padding:0 20px</li>
+            <li>total-width:360px</li>
+        </ul>
+    </div>
+    <div class="border-box">
+        <ul>
+            <li>Box-sizing : border-box</li>
+            <li>width:300px</li>
+            <li>border:10px</li>
+            <li>padding:0 20px</li>
+            <li>total-width:300px</li>
+        </ul>
+    </div>
+    <div class="d0">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quas reprehenderit doloribus veritatis laboriosam nulla non eligendi quasi mollitia ab ex ipsam dolore quo quis esse saepe, quibusdam nobis necessitatibus?</p>
+    </div>
+    <div class="d1">
+        <p class="p1">lorem</p>
+        <p class="p2">lorem</p>
+    </div>
+</body>
+</html>

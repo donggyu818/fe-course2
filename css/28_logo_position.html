@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Position</title>
+    <style>
+        .parent {
+            box-sizing: border-box; /* 박스 사이즈보다 배경이 더 길기 때문에 박스 사이징 써서 맞춰주기*/
+            width: 100%;
+            /* border: 1px solid red; */
+            background-color: rgb(246, 245, 239);
+            padding: 20px;
+            position: relative;
+        }
+        .child {
+            /* border: 1px solid blue; */
+            position: absolute;
+            top: 15px; left: 120px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Logo Position</h1>
+    <div class="parent">
+        <img src="https://www.starbucks.co.kr/common/img/common/logo.png" alt="STARBUCKS LOGO">
+        <p class="child">STARBUCKS COFFEE</p>
+    </div>
+</body>
+</html>

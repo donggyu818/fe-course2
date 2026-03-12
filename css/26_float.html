@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float Style</title>
+    <style>
+        /* .box-group {float: left;} */
+        .box-group div {
+            width: 100px; height: 100px;
+            /* display: inline-block; */
+        }
+        .d1 {
+            background-color: aquamarine;
+            float: left;
+        }
+        .d2 {
+            background-color: blue;
+            float: left;
+        }
+        .d3 {
+            background-color: yellow;
+            float: left;
+        }
+        .box-group p {
+            clear: left;
+        }
+        .img-group {
+            width: 500px; height: 300px;
+            border: 1px solid blue;
+            
+        }
+        .img-group img {
+            width: 100px; height: 100px;
+            float: right;
+            padding: 30px;
+        }
+        .no-float {
+            clear: both; /* 양쪽 float 속성을 삭제할 때 */
+        }
+    </style>
+</head>
+<body>
+    <h1>Float Style : block-level일때 엘리먼트를 한 줄로 정렬하여 배치할때 사용하는 것.</h1>
+    <div class="box-group">
+        <div class="d1"></div>
+        <div class="d2"></div>
+        <div class="d3"></div>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+            Exercitationem laboriosam enim similique labore doloremque 
+            architecto impedit sed, suscipit saepe esse nobis aut fuga eum, 
+            libero optio mollitia dicta obcaecati ullam!</p>
+    </div>
+    <div class="img-group">
+        <img src="../images/img01_seo.png" alt="나무이미지">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Sit natus aperiam a ipsum! Odit, officia molestias. 
+            Vitae obcaecati totam deleniti nam expedita sint repudiandae dolore, 
+            ex consequatur odio nulla ea.</p>
+        <p class="no-float">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Ex quae commodi minima, ratione maxime placeat? Quibusdam 
+            voluptatem autem, repellat at delectus dicta, nihil veritatis 
+            unde voluptatibus consequuntur deserunt, laboriosam ex?</p>
+        </div>
+</body>
+</html>

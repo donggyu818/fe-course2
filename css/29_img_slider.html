@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <meta name="description" content="Image Slider">
+    <style>
+        .slider-wrapper {
+            box-sizing: border-box;
+            position: relative; /* 자식에게 포지션을 쓸 것 이므로 부모에게 relative 지정. */
+            width: 1000px;
+            height: 400px;
+            margin: auto;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        .slider-wrapper img {
+            width: 800px; height: 400px;
+        }
+        button {
+            position: absolute;
+            top: 43%;
+            padding: 10px 20px;
+            background-color: white;
+            color: #171010;
+            border: none;
+            font-size: 2em; /* rem이나 em이나 거의 비슷한듯 ? */
+        }
+        .btn-prev {left: 20px;}
+        .btn-next {right: 20px;}
+        button:hover {background-color: #d7d7d7;}
+    </style>
+</head>
+<body>
+    <h1>Image Slider</h1>
+    <div class="slider-wrapper">
+        <img src="../images/Mad.jpg" alt="mad office poster">
+        <button class="btn-prev">◀</button>
+        <button class="btn-next">▶</button>
+        <!-- 화살표 대신 이전은 &lt; , 다음은 &gt; 로 해도 입력됨. -->
+    </div>
+</body>
+</html>
