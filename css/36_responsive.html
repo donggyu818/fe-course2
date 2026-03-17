@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 아래 메타는 모니터 사이즈에 맞춰 비율 조정한다는 얘기. 반드시 들어가야 함. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Style</title>
+    <meta name="description" content="Responsive Style">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .header-toggle {
+            display: none;
+            color: aqua;
+            font-size: 1.5rem;
+        }
+        /* 이게 미디어 쿼리. media query */
+        @media screen and (max-width: 800px) /* and (max-width)는 출력할 수 있는 최대 너비를 지정해주는 것. 
+                                            이때는 0 ~ 800px 에서만 style이 동작 함. 
+                                            만약 최소 너비를 지정해준다면 min-width: 로 하면 됨. */
+                                            /* 만약 아래에서 추가로 800보다 높게 max-width를 한다면 위에서 800이 지정되어 있으므로, 
+                                            동일한 style을 추가로 준 건은 801px 이상에서 이 아래로 변함. */
+        {
+            /* 괄호 안에 CSS styling 을 해주면 됨. */
+            .wrapper {
+                background-color: aquamarine;
+            }
+            .wrapper header {
+                background-color: tomato;
+                color: white;
+                font-weight: 2rem;
+            }
+            .wrapper main {
+                background-color: green;
+            }
+            .header-toggle {display: block;}
+            .header-menu {display: none;}
+        }
+        /* 1001px 이상에서 정의 */
+        @media screen and (min-width: 1000px) 
+        {
+            .wrapper {
+                background-color: aquamarine;
+            }
+            /* .wrapper header {
+                background-color: tomato;
+                color: white;
+                font-weight: 2rem;
+                } */
+                .wrapper main {
+                    background-color: blue;
+                    /* color: white; */
+                    font-weight: 2rem;
+                }
+                /* 이 메뉴 배치들도 너비에 따라 바꿀 수 있음. 예_좁은 스마트폰에서는 폰 화면에 최적화되게 할 수 있음. */
+                .header-menu {
+                    display: flex;
+                    gap: 10px;
+                    justify-content: right;
+                    border: 1px solid red;
+                    list-style-type: none;
+                    padding: 0; margin: 0;
+                }
+                .header-menu a {
+                    padding: 1rem 1.5rem;
+                }
+        }
+        /* 801px ~ 999px 까지는 이 스타일로 정의 */
+        @media (min-width: 801px) and (max-width: 999px) {
+            .wrapper {
+                background-color: bisque;
+            }
+            .wrapper footer {
+                background-color: yellow;
+            }
+            .header-menu {
+                display: flex;
+                gap: 10px;
+                justify-content: center;
+                /* border: 1px solid red; */
+                list-style-type: none;
+                padding: 0; margin: 0;
+            }
+            .header-menu a {
+                padding: .5rem 1.5rem;
+                background-color: silver;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Responsive Style :: 반응형</h1>
+    <div class="wrapper">
+        <header>
+            <nav>
+                <ul class="header-menu">
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">회원가입</a></li>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">게시판</a></li>
+                    <li><a href="#">QnA</a></li>
+                </ul>
+                <button class="header-toggle"><i class="fa-solid fa-bars"></i></button> <!-- 스마트폰 화면에서는 메뉴 펼치는 버튼이 보이게 -->
+            </nav>
+        </header>
+        <main>
+            Main
+        </main>
+        <footer>
+            Footer
+        </footer>
+    </div>
+</body>
+</html>
